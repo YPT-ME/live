@@ -13,3 +13,7 @@ services:
       - RTMP_PORT
     volumes:
       - ./certs:/opt/certs
+    networks:
+      yptlive:
+networks:
+  yptlive:
