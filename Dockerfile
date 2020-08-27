@@ -12,7 +12,7 @@ ARG NGINX_RTMP_VERSION
 # Build dependencies.
 RUN apk add --update \
   build-base \
-  ca-certificates \
+#  ca-certificates \
   curl \
   gcc \
   libc-dev \
@@ -132,7 +132,7 @@ LABEL MAINTAINER Alfred Gutierrez <alf.g.jr@gmail.com>
 #ENV RTMP_PORT 1935
 
 RUN apk add --update \
-  ca-certificates \
+#  ca-certificates \
   gettext \
   openssl \
   pcre \
