@@ -23,7 +23,7 @@ RUN apt-get update && \
 # nginx dependencies
   apt-get install -y --no-install-recommends libpcre3-dev \
   zlib1g-dev libssl-dev wget && \
-  rm -rf /var/lib/apt/lists/* \
+  rm -rf /var/lib/apt/lists/* && \
 # php
   apt-get install -y php-fpm php-cli php-curl
 
