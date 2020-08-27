@@ -37,10 +37,7 @@ RUN wget http://nginx.org/download/nginx-1.7.5.tar.gz && \
 
 # compile nginx
 WORKDIR /src/nginx-1.7.5
-RUN ./configure --with-http_ssl_module  \
-  --with-http_stub_status_module  \
-  --add-module=/src/nginx-rtmp-module-1.1.6 \
-  --with-cc-opt="-Wimplicit-fallthrough=0" \
+RUN ./configure --with-http_ssl_module --add-module=/src/nginx-rtmp-module-1.1.6 \
   --conf-path=/config/nginx.conf \
   --error-log-path=/logs/error.log \
   --http-log-path=/logs/access.log && \
