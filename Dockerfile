@@ -127,9 +127,9 @@ FROM alpine:3.11
 LABEL MAINTAINER Alfred Gutierrez <alf.g.jr@gmail.com>
 
 # Set default ports.
-ENV HTTP_PORT 80
-ENV HTTPS_PORT 443
-ENV RTMP_PORT 1935
+#ENV HTTP_PORT 80
+#ENV HTTPS_PORT 443
+#ENV RTMP_PORT 1935
 
 RUN apk add --update \
   ca-certificates \
@@ -147,7 +147,10 @@ RUN apk add --update \
   opus \
   rtmpdump \
   x264-dev \
-  x265-dev
+  x265-dev \
+  php-fpm \
+  php-cli \
+  php-curl
 
 COPY --from=build-nginx /usr/local/nginx /usr/local/nginx
 COPY --from=build-nginx /etc/nginx /etc/nginx
@@ -157,7 +160,7 @@ COPY --from=build-ffmpeg /usr/lib/libfdk-aac.so.2 /usr/lib/libfdk-aac.so.2
 # Add NGINX path, config and static files.
 ENV PATH "${PATH}:/usr/local/nginx/sbin"
 ADD nginx.conf /etc/nginx/nginx.conf.template
-RUN mkdir -p /opt/data && mkdir /www
+RUN mkdir -p /opt/data && mkdir /www && mkdir -p /opt/data/recorders
 ADD static /www/static
 
 EXPOSE 1935
