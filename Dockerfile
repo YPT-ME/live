@@ -55,4 +55,5 @@ ADD static /static
 RUN chmod -R 777 /data
 
 WORKDIR /
-CMD ["service php5-fpm start","nginx"]
+RUN echo "exit 0" > /usr/sbin/policy-rc.d
+CMD /etc/init.d/php5-fpm restart && nginx
