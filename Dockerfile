@@ -8,9 +8,7 @@ EXPOSE 80
 EXPOSE 443
 
 # create directories
-RUN mkdir /src /config /logs /data /static
-RUN mkdir -p /data/hls
-RUN mkdir -p /data/recorders
+RUN mkdir /src /config /logs /data /static /data/hls /data/recorders
 
 # update and upgrade packages
 RUN apt-get update && \
@@ -25,7 +23,7 @@ RUN apt-get update && \
 # nginx dependencies
   apt-get install -y --no-install-recommends libpcre3-dev \
   zlib1g-dev libssl-dev wget && \
-  rm -rf /var/lib/apt/lists/* && \
+  rm -rf /var/lib/apt/lists/* 
 # php
 #  apt-get install -y language-pack-en-base && \
 #  LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php && \
