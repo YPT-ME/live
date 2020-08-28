@@ -25,6 +25,8 @@ RUN apt-get update && \
   zlib1g-dev libssl-dev wget && \
   rm -rf /var/lib/apt/lists/* && \
 # php
+  sudo add-apt-repository ppa:ondrej/php && \
+  apt-get update && \
   apt-get install -y --no-install-recommends php-fpm php-cli php-curl 
 
 # get nginx source
