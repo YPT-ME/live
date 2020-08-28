@@ -25,7 +25,7 @@ RUN apt-get update && \
   zlib1g-dev libssl-dev wget && \
   rm -rf /var/lib/apt/lists/* && \
 # php
-  apt-get install -y --no-install-recommends php7.2-fpm php7.2-cli php7.2-curl 
+  apt-get install -y --no-install-recommends php-fpm php-cli php-curl 
 
 # get nginx source
 WORKDIR /src
