@@ -27,7 +27,7 @@ RUN apt-get update && \
 # php
   sudo add-apt-repository ppa:ondrej/php && \
   apt-get update && \
-  apt-get install -y --no-install-recommends php-fpm php-cli php-curl 
+  apt-get install -y --no-install-recommends php7.0-fpm php7.0-cli php7.0-curl 
 
 # get nginx source
 WORKDIR /src
