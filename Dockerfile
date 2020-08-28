@@ -54,7 +54,5 @@ ADD static /static
 
 RUN chmod -R 777 /data
 
-RUN service php5-fpm start
-
 WORKDIR /
-CMD "nginx"
+CMD ["service php5-fpm start","nginx"]
