@@ -8,7 +8,9 @@ EXPOSE 80
 EXPOSE 443
 
 # create directories
-RUN mkdir /src /config /logs /data /static /data/hls /data/recorders
+RUN mkdir /src /config /logs /data /static
+RUN mkdir -p /data/hls
+RUN mkdir -p /data/recorders
 
 # update and upgrade packages
 RUN apt-get update && \
