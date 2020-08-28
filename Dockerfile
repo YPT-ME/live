@@ -25,10 +25,7 @@ RUN apt-get update && \
   zlib1g-dev libssl-dev wget && \
   rm -rf /var/lib/apt/lists/* 
 # php
-#RUN apt-get install -y language-pack-en-base && \
-#  LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php && \
-#  apt-get update && \
-#  apt-get install -y --no-install-recommends php7.0-fpm php7.0-cli php7.0-curl 
+RUN apt-get install -y --no-install-recommends php5-fpm php5-cli php5-curl 
 
 # get nginx source
 RUN mkdir -p /src
