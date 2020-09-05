@@ -9,6 +9,7 @@ services:
     environment:
       - NGINX_HTTPS_PORT
       - NGINX_RTMP_PORT
+      - webSiteRootURL
     volumes:
       - ./certs:/opt/certs
     networks:
